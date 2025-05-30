@@ -18,7 +18,7 @@ HTML5, CSS3 (Flexbox/Grid), JavaScript
 Font Awesome, Google Fonts
 
 🚀 Getting Started
-Just clone the repo and open index.html in your browser.
+Just clone the repo and open portfolio.html in your browser.
 
 bash
 git clone https://github.com/your-username/asian-thread-house.git
