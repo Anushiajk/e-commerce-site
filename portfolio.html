@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIAN THREAD HOUSE - Premium Tailoring & Craft Supplies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d3a4b;      /* Deep blue-gray */
+            --secondary: #e7c873;    /* Soft gold */
+            --light: #f6f7fb;        /* Off-white */
+            --dark: #23272f;         /* Almost black */
+            --accent: #b7c9e2;       /* Muted blue */
+            --highlight: #f9e8c9;    /* Light gold */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef6f6; /* Very light pastel pink */
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+        }
+        
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 8px solid rgba(255, 182, 193, 0.1);
+            border-top: 8px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(255, 182, 193, 0.7));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(255, 182, 193, 0.95);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+        }
+        
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--dark);
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-top: -5px;
+            color: var(--dark);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://i.pinimg.com/736x/cc/07/ed/cc07edbc6dd80a47ba2729e4358f71eb.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--dark);
+            padding: 0 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary);
+            margin-left: 1rem;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #888;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #777;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--secondary);
+            border-radius: 10px;
+            top: -20px;
+            left: -20px;
+            z-index: -1;
+        }
+        
+        /* Products Section */
+        .products {
+            background: #f9f9f9;
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.6rem 1.5rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--highlight);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .product-rating {
+            color: var(--highlight);
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .add-to-cart:hover {
+            background: var(--accent);
+        }
+        
+        /* Order Form Section */
+       .order-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .order-option-btn {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .order-option-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .order-method {
+            display: none;
+        }
+        
+        .order-method.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .cart-items-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .remove-item {
+            color: #ff6b6b;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .manual-order-textarea {
+            min-height: 200px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(181, 234, 215, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://i.pinimg.com/736x/fb/b1/76/fbb1761b4a8befec5a695250641db335.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--dark);
+            text-align: center;
+        }
+        
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: var(--dark);
+        }
+        
+        .testimonials .section-title::after {
+            background: var(--secondary);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-slide {
+            padding: 2rem;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 3px solid var(--secondary);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .slider-nav {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(85, 85, 85, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background: var(--secondary);
+            transform: scale(1.2);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #777;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: var(--secondary);
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #bbb;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-newsletter input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-newsletter button {
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-newsletter button:hover {
+            background: #9fd8c8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+        }
+        
+        .footer-bottom p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .section {
+                padding: 4rem 2rem;
+            }
+            
+            .order-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--primary);
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-image::before {
+                display: none;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .order-form-container {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .order-form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/cc/07/ed/cc07edbc6dd80a47ba2729e4358f71eb.jpg" alt="Asian Thread House Logo">
+            <div class="logo-text">
+                <h1>ASIAN THREAD HOUSE</h1>
+                <p>EST. 1997</p>
+            </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Premium Tailoring & Craft Supplies</h2>
+            <p>For over 25 years, Asian Thread House has been the trusted destination for quality threads, fabrics, and crafting essentials. Serving both wholesale and retail customers with dedication and pride.</p>
+            <div class="btn-group">
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="#order" class="btn btn-outline">Order Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>Our Story</h2>
+            <p>Discover the legacy behind Asian Thread House and our commitment to quality</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>From Humble Beginnings to Trusted Name</h3>
+                <p>Nestled in the heart of the town, Asian Thread House has stood the test of time for over 25 years. Built from the ground up by a single, determined individual, it started as a humble establishment and has grown into a trusted destination for both wholesale and retail customers.</p>
+                <p>Our shop is a vibrant trove of tailoring and craft essentials. Inside, neatly arranged shelves display a wide variety of threads in every shade imaginable, gleaming scissors, and all the small necessities that tailors rely on. We have a dedicated section for beautiful borders and dazzling kundan stones, perfect for adding flair to any garment or craft project.</p>
+                <p>From basic tailoring tools to intricate craft supplies, we cater to seasoned professionals and passionate hobbyists alike. It's not just a store—it's a legacy built on quality, trust, and years of dedicated service.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://i.pinimg.com/736x/0c/47/01/0c4701c53511aa6dfe7be94b9ba35223.jpg" alt="Asian Thread House Interior">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+<section class="section products" id="products">
+    <div class="section-title">
+        <h2>Our Products</h2>
+        <p>Explore our wide range of high-quality tailoring and craft supplies</p>
+    </div>
+    <div class="product-categories">
+        <button class="category-btn active" data-category="all">All Products</button>
+        <button class="category-btn" data-category="threads">Threads</button>
+        <button class="category-btn" data-category="fabrics">Fabrics</button>
+        <button class="category-btn" data-category="tools">Tools</button>
+        <button class="category-btn" data-category="embellishments">Embellishments</button>
+    </div>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card" data-category="threads">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/cc/07/ed/cc07edbc6dd80a47ba2729e4358f71eb.jpg" alt="Colorful Threads">
+                <span class="product-badge">Best Seller</span>
+            </div>
+            <div class="product-info">
+                <span class="product-category">Threads</span>
+                <h3 class="product-title">Premium Polyester Thread Set</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    (128)
+                </div>
+                <button class="add-to-cart" data-product="Premium Polyester Thread Set" data-price="1299">Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card" data-category="fabrics">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/c5/18/c5/c518c5ae9dd2a8d976dcbd618bcf5e12.jpg" alt="Fur Fabric">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Fabrics</span>
+                <h3 class="product-title">Luxury Fur Fabric</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (76)
+                </div>
+                <button class="add-to-cart" data-product="Luxury Fur Fabric" data-price="899">Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card" data-category="tools">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/0c/47/01/0c4701c53511aa6dfe7be94b9ba35223.jpg" alt="Tailoring Tools">
+                <span class="product-badge">New</span>
+            </div>
+            <div class="product-info">
+                <span class="product-category">Tools</span>
+                <h3 class="product-title">Professional Tailoring Kit</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    (53)
+                </div>
+                <button class="add-to-cart" data-product="Professional Tailoring Kit" data-price="2499">Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card" data-category="threads">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/2c/da/97/2cda97fa6656c6907772f4a285cbd2d2.jpg" alt="Silk Threads">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Threads</span>
+                <h3 class="product-title">Silk Embroidery Thread Set</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (92)
+                </div>
+                <button class="add-to-cart" data-product="Silk Embroidery Thread Set" data-price="1799">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-category="threads">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/82/0c/e2/820ce29095ef9555f6b1e118a8e22797.jpg" alt="Woolen Threads">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Threads</span>
+                <h3 class="product-title">Woolen Thread Set</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (54)
+                </div>
+                <button class="add-to-cart" data-product="Woolen Thread Set" data-price="1799">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card" data-category="fabrics">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/6a/f7/b9/6af7b9c5a37244c5d22b9b1df926cbc7.jpg" alt="Lining Materials">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Fabrics</span>
+                <h3 class="product-title">Lining Materials</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (59)
+                </div>
+                <button class="add-to-cart" data-product="Lining Materials" data-price="1799">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card" data-category="fabrics">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/43/af/d5/43afd5d7320ee75c8e9dd5b0c1b9e000.jpg" alt="Sun Crepe Fabric">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Fabrics</span>
+                <h3 class="product-title">Sun Crepe Fabric</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (61)
+                </div>
+                <button class="add-to-cart" data-product="Sun Crepe Fabric" data-price="1799">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card" data-category="fabrics">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/45/e5/a3/45e5a3f615a74c70d3628873548cbe01.jpg" alt="Satin Fabric">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Fabrics</span>
+                <h3 class="product-title">Satin Fabric</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (72)
+                </div>
+                <button class="add-to-cart" data-product="Satin Fabric" data-price="1799">Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Product 9 -->
+        
+
+        <!-- Product 10 -->
+        <div class="product-card" data-category="tools">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/88/91/c3/8891c34c3b13f1d3066b2e709c928b54.jpg" alt="Marking Pencil">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Tools</span>
+                <h3 class="product-title">Marking Pencil</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (38)
+                </div>
+                <button class="add-to-cart" data-product="Marking Pencil" data-price="199">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product-card" data-category="tools">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/fd/22/3b/fd223bb652eb08a85e363f7320c147ba.jpg" alt="Marking Chalk">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Tools</span>
+                <h3 class="product-title">Marking Chalk</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    (42)
+                </div>
+                <button class="add-to-cart" data-product="Marking Chalk" data-price="149">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product-card" data-category="tools">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/81/42/a0/8142a041d47ebd5eea0065ea083987db.jpg" alt="Scissors">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Tools</span>
+                <h3 class="product-title">Professional Scissors</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    (87)
+                </div>
+                <button class="add-to-cart" data-product="Professional Scissors" data-price="699">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 13 -->
+        <div class="product-card" data-category="embellishments">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/88/59/54/88595497937af8a2e6415a37ec97bfdb.jpg" alt="Kundan Stones">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Embellishments</span>
+                <h3 class="product-title">Kundan Stones</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (65)
+                </div>
+                <button class="add-to-cart" data-product="Kundan Stones" data-price="1299">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="product-card" data-category="embellishments">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/a8/bb/11/a8bb118d7816a58c1d70adc7fc458d95.jpg" alt="Tube Beads">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Embellishments</span>
+                <h3 class="product-title">Tube Beads</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    (51)
+                </div>
+                <button class="add-to-cart" data-product="Tube Beads" data-price="899">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 15 -->
+        <div class="product-card" data-category="embellishments">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/ec/13/34/ec1334d38ae6401665caca605f20e32f.jpg" alt="Sequences">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Embellishments</span>
+                <h3 class="product-title">Sequences</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (78)
+                </div>
+                <button class="add-to-cart" data-product="Sequences" data-price="499">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 16 -->
+        <div class="product-card" data-category="embellishments">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/71/a9/70/71a9705299f032c212a1dd620cee3272.jpg" alt="Crackle Beads">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Embellishments</span>
+                <h3 class="product-title">Crackle Beads</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    (47)
+                </div>
+                <button class="add-to-cart" data-product="Crackle Beads" data-price="799">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 17 -->
+        <div class="product-card" data-category="embellishments">
+            <div class="product-img">
+                <img src="https://i.pinimg.com/736x/00/12/af/0012afd011c95a40996e51c459251386.jpg" alt="Charms">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Embellishments</span>
+                <h3 class="product-title">Charms</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    (63)
+                </div>
+                <button class="add-to-cart" data-product="Charms" data-price="999">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Order Form Section -->
+    <section class="section" id="order">
+        <div class="section-title">
+            <h2>Place Your Order</h2>
+            <p>Choose how you'd like to place your order with us</p>
+        </div>
+        <div class="order-form-container">
+            <div class="order-options">
+                <button class="order-option-btn active" data-method="cart">Order From Cart</button>
+                <button class="order-option-btn" data-method="manual">Type Your Order</button>
+            </div>
+            
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <label for="order-name">Full Name</label>
+                    <input type="text" id="order-name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-phone">Phone Number</label>
+                    <input type="tel" id="order-phone" class="form-control" placeholder="Your WhatsApp Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-email">Email (Optional)</label>
+                    <input type="email" id="order-email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="order-address">Delivery Address</label>
+                    <input type="text" id="order-address" class="form-control" placeholder="Your Complete Address" required>
+                </div>
+                
+                <!-- Cart Order Method -->
+                <div class="order-method active" id="cartOrderMethod">
+                    <div class="cart-items-list" id="cartItemsList">
+                        <p>Your cart is empty. Please add items from our products section.</p>
+                    </div>
+                </div>
+                
+                <!-- Manual Order Method -->
+                <div class="order-method" id="manualOrderMethod">
+                    <div class="form-group full-width">
+                        <label for="manual-order">Your Order Details</label>
+                        <textarea id="manual-order" class="form-control manual-order-textarea" placeholder="Please type your complete order details here including product names, colors, quantities, and any special requirements" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="order-notes">Special Instructions</label>
+                    <textarea id="order-notes" class="form-control" placeholder="Any special delivery instructions or notes about your order"></textarea>
+                </div>
+                <button type="submit" class="submit-order-btn">Place Order via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+    
+   
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out to us for any queries or feedback</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>Asian Thread House, Near Old Parthas, Cape Road, Nagercoil -629001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+91 94881 32175</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@asianthreadhouse.com">asianthreadhouse@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>Asian Thread House has been serving customers with premium tailoring and craft supplies for over 25 years.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                <form class="footer-newsletter">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Asian Thread House. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').classList.add('fade-out');
+            setTimeout(() => document.querySelector('.preloader').style.display = 'none', 500);
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Product Category Filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                // Filter products
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        
+        // Order Method Toggle
+        const orderOptionBtns = document.querySelectorAll('.order-option-btn');
+        const orderMethods = document.querySelectorAll('.order-method');
+        
+        orderOptionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const method = btn.dataset.method;
+                
+                // Update active button
+                orderOptionBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show selected method
+                orderMethods.forEach(m => m.classList.remove('active'));
+                document.getElementById(`${method}OrderMethod`).classList.add('active');
+            });
+        });
+        
+        // Shopping Cart Functionality (updated to remove prices)
+        const cartItems = [];
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        const cartItemsList = document.getElementById('cartItemsList');
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const product = btn.dataset.product;
+                
+                // Add item to cart
+                cartItems.push(product);
+                updateCartDisplay();
+                
+                // Show confirmation
+                btn.textContent = 'Added!';
+                setTimeout(() => {
+                    btn.textContent = 'Add to Cart';
+                }, 2000);
+            });
+        });
+        
+        function updateCartDisplay() {
+            if (cartItems.length === 0) {
+                cartItemsList.innerHTML = '<p>Your cart is empty. Please add items from our products section.</p>';
+                return;
+            }
+            
+            let itemsHTML = '';
+            cartItems.forEach((item, index) => {
+                itemsHTML += `
+                    <div class="cart-item">
+                        <span>${item}</span>
+                        <button class="remove-item" data-index="${index}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            cartItemsList.innerHTML = itemsHTML;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.currentTarget.dataset.index);
+                    cartItems.splice(index, 1);
+                    updateCartDisplay();
+                });
+            });
+        }
+        
+        // WhatsApp Order Submission (updated to handle both methods)
+        const orderForm = document.getElementById('orderForm');
+        const whatsappNumber = '9488132175'; // Replace with your WhatsApp number
+        
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('order-name').value;
+            const phone = document.getElementById('order-phone').value;
+            const email = document.getElementById('order-email').value;
+            const address = document.getElementById('order-address').value;
+            const notes = document.getElementById('order-notes').value;
+            
+            // Determine which order method is active
+            const isCartMethod = document.querySelector('.order-option-btn[data-method="cart"]').classList.contains('active');
+            
+            // Format WhatsApp message
+            let message = `*New Order from Asian Thread House Website*%0A%0A`;
+            message += `*Name:* ${name}%0A`;
+            message += `*Phone:* ${phone}%0A`;
+            if (email) message += `*Email:* ${email}%0A`;
+            message += `*Delivery Address:* ${address}%0A%0A`;
+            
+            if (isCartMethod) {
+                // Cart order method
+                message += `*Order Items:*%0A`;
+                if (cartItems.length === 0) {
+                    alert('Please add items to your cart or switch to manual order method.');
+                    return;
+                }
+                cartItems.forEach(item => {
+                    message += `- ${item}%0A`;
+                });
+            } else {
+                // Manual order method
+                const manualOrder = document.getElementById('manual-order').value;
+                if (!manualOrder.trim()) {
+                    alert('Please enter your order details.');
+                    return;
+                }
+                message += `*Order Details:*%0A${manualOrder.replace(/\n/g, '%0A')}%0A%0A`;
+            }
+            
+            if (notes) message += `*Special Instructions:*%0A${notes.replace(/\n/g, '%0A')}%0A%0A`;
+            
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            
+            // Reset form
+            orderForm.reset();
+            cartItems.length = 0;
+            updateCartDisplay();
+            document.getElementById('manual-order').value = '';
+        });
+        
+        // Testimonial Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        sliderDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.dataset.slide);
+                showSlide(slideIndex);
+            });
+        });
+        
+        // Auto slide change
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(nextSlide);
+        }, 5000);
+    </script>
+</body>
+</html>
